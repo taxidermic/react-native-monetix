@@ -25,6 +25,8 @@ buildscript {
         classpath 'com.google.gms:google-services:4.3.3'
         // kotlin
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
+        classpath("org.jetbrains.kotlin:kotlin-serialization:$kotlinVersion")
+
     }
 }
 

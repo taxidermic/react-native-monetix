@@ -1,5 +1,10 @@
 apply plugin: "com.android.application"
 apply plugin: "com.facebook.react"
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlinx-serialization'
+apply plugin: 'kotlin-parcelize'
+
 
 import com.android.build.OutputFile
 
@@ -102,6 +107,15 @@ android {
         versionName "1.0"
     }
 
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+
     splits {
         abi {
             reset()
@@ -155,6 +169,8 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'com.yandex.android:mobmetricalib:5.3.0'
 
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.8.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1"
     implementation "com.trxhost:msdk-ui:2.1.1"
     implementation "com.trxhost:msdk-core-android:1.0.1"
 
